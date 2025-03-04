@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-3xl">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <div class="flex flex-col items-center mb-8">
+                <!-- Logo Lingkaran -->
+                <div class="mb-4 relative group">
+                    <img 
+                        src="img/dion-logo.png" 
+                        alt="Logo" 
+                        class="w-24 h-24 rounded-full border-4 border-white shadow-xl hover:scale-105 transition-transform cursor-pointer"
+                    >
+                    <div class="absolute inset-0 rounded-full bg-indigo-500 opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                </div>
+                <h1 class="text-4xl font-bold text-indigo-600 animate-fade-in-down">
+                    My To-Do List
+                </h1>
+            </div>
+
+            <!-- Input Form -->
+            <form id="todoForm" class="flex gap-2 mb-8">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="Tambahkan tugas baru..."
+                    class="flex-1 p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+                >
+                <button 
+                    type="submit"
+                    class="bg-indigo-500 text-white px-6 py-3 rounded-lg hover:bg-indigo-600 transition-colors"
+                >
+                    Tambah
+                </button>
+            </form>
+        </header>
+
+        <!-- Controls -->
+        <div class="flex flex-col md:flex-row gap-4 mb-6">
+            <select id="filter" class="p-2 rounded-lg border border-gray-300">
+                <option value="all">Semua</option>
+                <option value="completed">Selesai</option>
+                <option value="uncompleted">Belum Selesai</option>
+            </select>
+            
+            <select id="sort" class="p-2 rounded-lg border border-gray-300">
+                <option value="newest">Terbaru</option>
+                <option value="oldest">Terlama</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+            </select>
+        </div>
+
+        <!-- Todo List -->
+        <ul id="todoList" class="bg-white rounded-lg shadow divide-y divide-gray-200"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-10px); }
+}
+
+.todo-item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.todo-item.removing {
+    animation: fadeOut 0.3s ease-out;
+}
+
+.completed {
+    @apply line-through text-gray-400;
+}
+
+.animate-fade-in-down {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Logo Transition */
+img {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
